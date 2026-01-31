@@ -115,6 +115,27 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
 
+
+
+
+## 🧪 Test It
+
+Once running, try searching Steve Jobs' Stanford speech:
+```bash
+curl -X POST http://localhost:8000/api/search \
+  -H "Content-Type: application/json" \
+  -d '{
+    "youtube_url": "https://www.youtube.com/watch?v=UF8uR6Z6KLc",
+    "query": "stay hungry stay foolish",
+    "max_results": 3
+  }'
+```
+
+**Result:** Finds the exact moment at **14:12** where Stev çJobs says "Stay Hungry. Stay Foolish."
+
+Or open the interactive docs: [http://localhost:8000/docs](http://localhost:8000/docs)
+
+
 ## 📊 Metrics to Track
 
 - Search latency (target: <500ms)
@@ -132,5 +153,3 @@ Follow the journey on X: [@ermias](https://x.com/ermishoo)
 MIT
 
 ---
-
-Built by [ermiaswalelgne](https://github.com/ermiaswalelgne).
