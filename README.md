@@ -68,36 +68,36 @@ Semantic search inside any YouTube video:
 ## 🚀 Roadmap
 
 ### Week 1: Core Backend
-- [x] Project setup & architecture
-- [ ] Transcript fetching service
-- [ ] Embedding generation
-- [ ] Basic vector search (in-memory first)
-- [ ] FastAPI endpoints
+- ✅ Project setup & architecture
+- ✅ Transcript fetching service
+- ✅ Embedding generation
+- ✅ Basic vector search (in-memory first)
+- ✅ FastAPI endpoints
 
-### Week 2: Database & API
-- [ ] PostgreSQL + pgvector setup
-- [ ] Redis caching for transcripts
-- [ ] Rate limiting
-- [ ] Error handling
+### Week 2: Frontend
+- ✅ React + Vite + Tailwind setup
+- ✅ Search interface
+- ✅ Results display with video preview
+- ✅ Mobile responsive
 
-### Week 3: Frontend
-- [ ] Next.js setup
-- [ ] Search interface
-- [ ] Results display with video preview
-- [ ] Mobile responsive
+### Week 3: Database & Caching
+- ⬜ PostgreSQL + pgvector setup
+- ⬜ Redis caching for transcripts
+- ⬜ Rate limiting
+- ⬜ Error handling
 
 ### Week 4: DevOps & Launch
-- [ ] Docker containerization
-- [ ] Kubernetes manifests
-- [ ] GitHub Actions CI/CD
-- [ ] Deploy to production
-- [ ] Domain & SSL
+- ⬜ Docker containerization
+- ⬜ Kubernetes manifests
+- ⬜ GitHub Actions CI/CD
+- ⬜ Deploy to production
+- ⬜ Domain & SSL
 
 ### Post-Launch
-- [ ] User accounts (optional)
-- [ ] Search history
-- [ ] Browser extension
-- [ ] API for developers
+- ⬜ User accounts (optional)
+- ⬜ Search history
+- ⬜ Browser extension
+- ⬜ API for developers
 
 ## 🏃 Quick Start
 
