@@ -7,9 +7,8 @@ pydantic-settings==2.1.0
 # YouTube
 youtube-transcript-api>=1.2.4
 
-# Embeddings - updated versions
+# Embeddings (torch installed separately in Dockerfile for CPU-only)
 sentence-transformers>=2.5.0
-torch>=2.2.0
 
 # Database
 asyncpg==0.29.0

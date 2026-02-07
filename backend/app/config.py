@@ -18,7 +18,7 @@ class Settings(BaseSettings):
     api_port: int = 8000
     
     # CORS
-    cors_origins: List[str] = ["http://localhost:3000", "http://localhost:8000"]
+    cors_origins: List[str] = ["http://localhost:3000", "http://localhost:8000",    "https://clipcontext.fly.dev"]
     
     # Database
     database_url: str = "postgresql+asyncpg://postgres:postgres@localhost:5432/clipcontext"

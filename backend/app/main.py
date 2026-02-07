@@ -19,8 +19,6 @@ async def lifespan(app: FastAPI):
     print(f"📦 Environment: {settings.environment}")
     
     # TODO: Initialize embedding model here
-    # from app.services.embedding import EmbeddingService
-    # app.state.embedding_service = EmbeddingService()
     
     yield
     
@@ -38,7 +36,12 @@ app = FastAPI(
 # CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.cors_origins,
+    allow_origins=[
+        "http://localhost:3000",
+        "http://localhost:5173",
+        "http://localhost:8000",
+        "https://clipcontext.fly.dev",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

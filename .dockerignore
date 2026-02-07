@@ -1,0 +1,39 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+*.egg-info/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+
+# Docker
+.docker/
+
+# Frontend (deploying separately)
+#frontend/
+
+# Tests
+tests/
+*.test.py
+
+# Docs
+*.md
+!README.md
+
+# Local env
+.env
+.env.local

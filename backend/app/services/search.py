@@ -6,6 +6,7 @@ import time
 from typing import List, Optional
 import numpy as np
 from dataclasses import dataclass
+from types import SimpleNamespace
 
 from app.config import settings
 from app.services.transcript import TranscriptService, Transcript, TranscriptError
@@ -70,11 +71,14 @@ class SearchService:
             embedded_chunks = self._embedding_cache[video_id]
         else:
             # Fetch transcript
-            transcript = await self.transcript_service.fetch_transcript(video_id)
-            self._transcript_cache[video_id] = transcript
+            # transcript = await self.transcript_service.fetch_transcript(video_id)
+            # passing request.youtube_url instead of video_id
+            transcript_data = await self.transcript_service.fetch_transcript(request.youtube_url)
+            self._transcript_cache[video_id] = transcript_data
             
             # Chunk and embed
-            chunks = self.chunker.chunk_transcript(transcript.segments)
+            segments = [SimpleNamespace(**s) for s in transcript_data["segments"]]
+            chunks = self.chunker.chunk_transcript(segments)
             embedded_chunks = self.embedding_service.embed_chunks(chunks)
             self._embedding_cache[video_id] = embedded_chunks
         
@@ -98,7 +102,7 @@ class SearchService:
                 ),
                 text=result.chunk.text,
                 score=float(result.score),
-                youtube_link=self.transcript_service.get_youtube_link(
+                youtube_link=self.transcript_service.get_youtube_link_with_timestamp(
                     video_id,
                     result.chunk.start_time
                 ),
@@ -114,7 +118,8 @@ class SearchService:
             video=VideoMetadata(
                 video_id=video_id,
                 title=None,  # TODO: Fetch from YouTube API
-                duration=int(transcript.duration) if transcript.duration else None,
+                #duration=int(transcript.duration) if transcript.duration else None,
+                duration=None,  # TODO: Calculate from segments
                 channel=None,
             ),
             results=timestamp_results,

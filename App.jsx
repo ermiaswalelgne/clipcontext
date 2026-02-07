@@ -22,7 +22,6 @@ function App() {
     setResults(null)
 
     try {
-        
       const response = await fetch(`${API_URL}/api/search`, {
         method: 'POST',
         headers: {
@@ -111,7 +110,7 @@ function App() {
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                 </svg>
-                Searching...
+                Searching... (first search takes ~15s)
               </span>
             ) : (
               'Search'
@@ -212,10 +211,14 @@ function App() {
         <div className="max-w-4xl mx-auto px-4 py-6">
           <p className="text-gray-500 text-sm text-center">
             Built in public by{' '}
-            <a href="https://github.com/ermiaswalelgne/clipcontext" className="text-red-400 hover:underline">
-              @ermiaswalelgne
+            <a href="https://x.com/ermiaboruoffcl" className="text-red-400 hover:underline">
+              @ermiaboruoffcl
             </a>
-            {' '}• Day 3 of #buildinpublic
+            {' '}•{' '}
+            <a href="https://github.com/ermiaswalelgne/clipcontext" className="text-red-400 hover:underline">
+              GitHub
+            </a>
+            {' '}• #buildinpublic
           </p>
         </div>
       </footer>
